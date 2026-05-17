@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udharo Tracker - रिपोर्ट</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="navbar-brand">📒 Udharo Tracker</a>
+        <div class="navbar-menu">
+            <a href="dashboard.html">ड्यासबोर्ड</a>
+            <a href="customers.html">ग्राहकहरू</a>
+            <a href="reports.html" class="active">रिपोर्ट</a>
+            <a href="#" onclick="logout()">लगआउट</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">कारोबार रिपोर्ट</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group">
+                    <label>सुरु मिति</label>
+                    <input type="date" id="reportStartDate">
+                </div>
+                <div class="form-group">
+                    <label>अन्त्य मिति</label>
+                    <input type="date" id="reportEndDate">
+                </div>
+                <div class="form-group" style="display: flex; align-items: end;">
+                    <button class="btn btn-primary" onclick="loadReports()">रिपोर्ट हेर्नुहोस्</button>
+                </div>
+            </div>
+            
+            <div class="stats-grid" style="margin-top: 1rem;">
+                <div class="stat-card">
+                    <h3>कुल उधारो</h3>
+                    <div class="stat-value text-danger" id="reportTotalUdharo">रु. ०</div>
+                </div>
+                <div class="stat-card">
+                    <h3>कुल भुक्तानी</h3>
+                    <div class="stat-value text-success" id="reportTotalPayment">रु. ०</div>
+                </div>
+                <div class="stat-card">
+                    <h3>बाँकी</h3>
+                    <div class="stat-value" id="reportBalance">रु. ०</div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>मिति</th><th>ग्राहक</th><th>प्रकार</th><th>रकम</th><th>नोट</th></tr>
+                    </thead>
+                    <tbody id="reportsTable">
+                        <tr><td colspan="5" class="text-center">मिति चयन गरेर रिपोर्ट हेर्नुहोस्</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
