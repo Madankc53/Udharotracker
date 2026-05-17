@@ -2,7 +2,7 @@
 <html lang="ne">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Udharo Tracker - लगइन</title>
     <link rel="stylesheet" href="style.css">
     <script src="config.js"></script>
@@ -12,24 +12,24 @@
     <div class="login-container">
         <div class="login-card">
             <h1>📒 Udharo Tracker</h1>
-            <h3 style="text-align: center; margin-bottom: 1rem;">नेपाली उधारो ट्र्याकर</h3>
+            <h3 style="text-align: center; margin-bottom: 1rem; color: #666;">नेपाली उधारो ट्र्याकर</h3>
             
             <form onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label>प्रयोगकर्ता नाम</label>
-                    <input type="text" id="username" placeholder="प्रयोगकर्ता नाम" required>
+                    <input type="text" id="username" name="username" placeholder="प्रयोगकर्ता नाम" required autocomplete="off">
                 </div>
                 
                 <div class="form-group">
                     <label>पासवर्ड</label>
-                    <input type="password" id="password" placeholder="पासवर्ड" required>
+                    <input type="password" id="password" name="password" placeholder="पासवर्ड" required>
                 </div>
                 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">लगइन गर्नुहोस्</button>
             </form>
             
-            <p class="text-center mt-2" style="font-size: 0.875rem; color: #666;">
-                डिफल्ट: admin / admin123
+            <p class="text-center mt-2" style="font-size: 0.875rem; color: #666; margin-top: 1rem;">
+                डिफल्ट: <strong>admin</strong> / <strong>admin123</strong>
             </p>
         </div>
     </div>
