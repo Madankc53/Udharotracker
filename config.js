@@ -1,4 +1,4 @@
-// config.js - API Configuration
+// config.js - API Configuration for GitHub Pages
 const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVZy-biQDZAETUWVW5DoQGYbbkBGeYI2dqbYPJKv9zyy0yuXtCnieluUya0aBpc8iPVg/exec';
 
 // App configuration
@@ -8,7 +8,5 @@ const APP_CONFIG = {
     version: '1.0.0'
 };
 
-// Export for use in other files (for modern browsers)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { APP_SCRIPT_URL, APP_CONFIG };
-}
+// No module.exports needed for browser
+// The variables are globally available
