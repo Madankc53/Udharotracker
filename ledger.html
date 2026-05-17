@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udharo Tracker - ग्राहक लेजर</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="navbar-brand">📒 Udharo Tracker</a>
+        <div class="navbar-menu">
+            <a href="dashboard.html">ड्यासबोर्ड</a>
+            <a href="customers.html">ग्राहकहरू</a>
+            <a href="reports.html">रिपोर्ट</a>
+            <a href="#" onclick="logout()">लगआउट</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">लेजर: <span id="ledgerCustomerName"></span></h2>
+            <a href="customers.html" class="btn btn-sm btn-info">← ग्राहक सूचीमा फर्कनुहोस्</a>
+        </div>
+        
+        <div class="card">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>मिति</th><th>कारोबार प्रकार</th><th>रकम</th><th>नोट</th><th>बाँकी</th></tr>
+                    </thead>
+                    <tbody id="ledgerTable">
+                        <tr><td colspan="5" class="text-center">लोड हुँदै...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
