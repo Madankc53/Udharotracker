@@ -43,4 +43,90 @@
         </div>
     </div>
     
-    <!-- Add
+    <!-- Add Customer Modal -->
+    <div id="addCustomerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>नयाँ ग्राहक थप्नुहोस्</h2>
+                <span class="close" onclick="closeModal('addCustomerModal')">&times;</span>
+            </div>
+            <div class="form-group">
+                <label>नाम *</label>
+                <input type="text" id="customerName" placeholder="ग्राहकको पुरा नाम">
+            </div>
+            <div class="form-group">
+                <label>फोन नम्बर</label>
+                <input type="tel" id="customerPhone" placeholder="९८xxxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>ठेगाना</label>
+                <input type="text" id="customerAddress" placeholder="ठेगाना">
+            </div>
+            <button class="btn btn-primary" onclick="addCustomer()">ग्राहक थप्नुहोस्</button>
+        </div>
+    </div>
+    
+    <!-- Add Udharo Modal -->
+    <div id="addUdharoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>उधारो थप्नुहोस्</h2>
+                <span class="close" onclick="closeModal('addUdharoModal')">&times;</span>
+            </div>
+            <p><strong>ग्राहक:</strong> <span id="udharoCustomerName"></span></p>
+            <input type="hidden" id="udharoCustomerId">
+            <div class="form-group">
+                <label>रकम (रु.) *</label>
+                <input type="number" id="udharoAmount" step="1" placeholder="रकम">
+            </div>
+            <div class="form-group">
+                <label>मिति</label>
+                <input type="date" id="udharoDate">
+            </div>
+            <div class="form-group">
+                <label>भुक्तानी म्याद</label>
+                <input type="date" id="udharoDueDate">
+            </div>
+            <div class="form-group">
+                <label>नोट</label>
+                <textarea id="udharoNote" rows="3" placeholder="कुनै नोट"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="saveUdharo()">उधारो सुरक्षित गर्नुहोस्</button>
+        </div>
+    </div>
+    
+    <!-- Receive Payment Modal -->
+    <div id="receivePaymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>भुक्तानी लिनुहोस्</h2>
+                <span class="close" onclick="closeModal('receivePaymentModal')">&times;</span>
+            </div>
+            <p><strong>ग्राहक:</strong> <span id="paymentCustomerName"></span></p>
+            <input type="hidden" id="paymentCustomerId">
+            <div class="form-group">
+                <label>रकम (रु.) *</label>
+                <input type="number" id="paymentAmount" step="1" placeholder="रकम">
+            </div>
+            <div class="form-group">
+                <label>मिति</label>
+                <input type="date" id="paymentDate">
+            </div>
+            <div class="form-group">
+                <label>भुक्तानी विधि</label>
+                <select id="paymentMethod">
+                    <option value="Cash">नगद</option>
+                    <option value="Bank Transfer">बैंक ट्रान्सफर</option>
+                    <option value="Mobile Payment">मोबाइल पेमेन्ट</option>
+                    <option value="Cheque">चेक</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>सन्दर्भ नम्बर</label>
+                <input type="text" id="paymentReference" placeholder="चेक/ट्रान्जेक्सन नम्बर">
+            </div>
+            <button class="btn btn-success" onclick="savePayment()">भुक्तानी रेकर्ड गर्नुहोस्</button>
+        </div>
+    </div>
+</body>
+</html>
