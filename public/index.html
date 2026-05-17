@@ -1,5 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head><title>Proxy Running</title></head>
-<body>Proxy is active.</body>
-</html>
+// config.js
+const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVZy-biQDZAETUWVW5DoQGYbbkBGeYI2dqbYPJKv9zyy0yuXtCnieluUya0aBpc8iPVg/exec';
+
+// Store token in localStorage after login
+async function login(username, password) {
+  const response = await fetch(`${APP_SCRIPT_URL}?action=doLogin`, {
+    method: 'POST',
+    mode: 'no-cors', // Important for Apps Script
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      username: username,
+      password: password
+    })
+  });
+  
+  const result = await response.json();
+  if (result.success) {
+    localStorage.setItem('authToken', result.token);
+  }
+  return result;
+}
+
+// Generic API caller
+async function callAppsScript(action, params = {}) {
+  const token = localStorage.getItem('authToken');
+  const requestBody = {
+    action: action,
+    token: token,
+    ...params
+  };
+  
+  const response = await fetch(APP_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestBody)
+  });
+  
+  return await response.json();
+}
+
+// Example usage
+async function getDashboard() {
+  return await callAppsScript('getDashboard');
+}
+
+async function addCustomer(name, phone, address) {
+  return await callAppsScript('addCustomer', { name, phone, address });
+}
