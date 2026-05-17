@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udharo Tracker - ग्राहक व्यवस्थापन</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="navbar-brand">📒 Udharo Tracker</a>
+        <div class="navbar-menu">
+            <a href="dashboard.html">ड्यासबोर्ड</a>
+            <a href="customers.html" class="active">ग्राहकहरू</a>
+            <a href="reports.html">रिपोर्ट</a>
+            <a href="#" onclick="logout()">लगआउट</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 class="card-title">ग्राहक सूची</h2>
+                <button class="btn btn-primary" onclick="openModal('addCustomerModal')">+ नयाँ ग्राहक</button>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="searchCustomer" placeholder="नाम वा फोन नम्बरले खोज्नुहोस्...">
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>नाम</th><th>फोन</th><th>ठेगाना</th><th>कार्य</th></tr>
+                    </thead>
+                    <tbody id="customersTable">
+                        <tr><td colspan="4" class="text-center">लोड हुँदै...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add
